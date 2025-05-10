@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://b0ph2li71r331"]
+
+[ext_resource type="Texture2D" uid="uid://c50cm1bo06udi" path="res://Sprites/Background/Green.png" id="1_urvpg"]
+[ext_resource type="PackedScene" uid="uid://d3xi7trobvkow" path="res://PreFabs/Ground.tscn" id="2_82r2i"]
+[ext_resource type="FontFile" uid="uid://d0joq6v8gvy31" path="res://Fonts/Pixeled.ttf" id="5_mupgs"]
+[ext_resource type="Script" path="res://Scripts/score_text.gd" id="6_yqngr"]
+[ext_resource type="PackedScene" uid="uid://dffayqo1kccit" path="res://PreFabs/spikeball.tscn" id="8_cpypx"]
+[ext_resource type="PackedScene" uid="uid://b6hv33mg5k13v" path="res://PreFabs/player.tscn" id="8_rty0i"]
+[ext_resource type="PackedScene" uid="uid://bi6ky8ikyk0nl" path="res://PreFabs/player_2.tscn" id="9_p1i21"]
+[ext_resource type="PackedScene" uid="uid://coe4lxrbh8uk0" path="res://PreFabs/obj_spawner.tscn" id="11_4rnat"]
+
+[node name="Main" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_top = -264.0
+offset_right = 5398.0
+offset_bottom = 367.0
+texture = ExtResource("1_urvpg")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(640, 360)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="ScoreText" type="Label" parent="HUD"]
+offset_left = 22.0
+offset_top = 1.0
+offset_right = 62.0
+offset_bottom = 43.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_mupgs")
+theme_override_font_sizes/font_size = 15
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_yqngr")
+
+[node name="Timer" type="Timer" parent="HUD"]
+autostart = true
+
+[node name="Player" parent="." instance=ExtResource("8_rty0i")]
+position = Vector2(59, 135)
+
+[node name="Player2" parent="." instance=ExtResource("9_p1i21")]
+position = Vector2(59, 311)
+
+[node name="Ground" parent="." instance=ExtResource("2_82r2i")]
+
+[node name="OBJSpawner5" parent="." instance=ExtResource("11_4rnat")]
+position = Vector2(744, 65)
+time = 0.8
+
+[node name="OBJSpawner6" parent="." instance=ExtResource("11_4rnat")]
+position = Vector2(655, 247)
+obj = ExtResource("8_cpypx")
+time = 0.8
+
+[node name="OBJSpawner7" parent="." instance=ExtResource("11_4rnat")]
+position = Vector2(764, 209)
+time = 0.8
+
+[connection signal="timeout" from="HUD/Timer" to="HUD/ScoreText" method="_on_timer_timeout"]

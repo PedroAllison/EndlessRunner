@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dffayqo1kccit"]
+
+[ext_resource type="Script" path="res://Scripts/saw.gd" id="1_bx6je"]
+[ext_resource type="Texture2D" uid="uid://ctt3vlv2ed27s" path="res://Sprites/Traps/Spiked Ball/Spiked Ball.png" id="2_jakmx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b0hji"]
+radius = 10.0499
+
+[node name="Saw" type="Area2D"]
+z_index = -1
+script = ExtResource("1_bx6je")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_b0hji")
+debug_color = Color(0.95692, 0, 0.535356, 0.42)
+
+[node name="SpikedBall" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("2_jakmx")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
