@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=3 uid="uid://dffayqo1kccit"]
+
+[ext_resource type="Script" path="res://Scripts/saw.gd" id="1_bx6je"]
+[ext_resource type="Texture2D" uid="uid://ci8sgrv203ka3" path="res://Sprites/_NEW/Enemies/Mushroom/Mushroom-Run.png" id="2_6xmfv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_en3xs"]
+atlas = ExtResource("2_6xmfv")
+region = Rect2(0, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5a8w"]
+atlas = ExtResource("2_6xmfv")
+region = Rect2(80, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyqx0"]
+atlas = ExtResource("2_6xmfv")
+region = Rect2(160, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbvpo"]
+atlas = ExtResource("2_6xmfv")
+region = Rect2(240, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2pqu"]
+atlas = ExtResource("2_6xmfv")
+region = Rect2(320, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83bor"]
+atlas = ExtResource("2_6xmfv")
+region = Rect2(400, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o3a1"]
+atlas = ExtResource("2_6xmfv")
+region = Rect2(480, 0, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmg2e"]
+atlas = ExtResource("2_6xmfv")
+region = Rect2(560, 0, 80, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a4yy2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_en3xs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5a8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wyqx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbvpo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2pqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83bor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0o3a1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmg2e")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 11.0
+}]
+
+[node name="Cogumelo" type="Area2D"]
+z_index = 1
+position = Vector2(31, -1)
+script = ExtResource("1_bx6je")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4.37501, 3.5)
+scale = Vector2(0.890625, 0.890625)
+sprite_frames = SubResource("SpriteFrames_a4yy2")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.321526
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-5, 3)
+scale = Vector2(0.94181, 0.94181)
+polygon = PackedVector2Array(-14, 5, -15, 9, -15, 13, -15, 14, -9, 14, -7, 14, -6, 16, -7, 20, -6, 23, -6, 25, -5, 28, -4, 30, 1, 31, 5, 31, 5, 28, 5, 24, 5, 19, 4, 16, 5, 14, 14, 14, 14, 10, 13, 5, 6, -1, 1, -2, -7, -1, -10, 2)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
