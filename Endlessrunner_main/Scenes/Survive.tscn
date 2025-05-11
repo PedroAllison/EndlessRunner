@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0ph2li71r331"]
+[gd_scene load_steps=12 format=3 uid="uid://b0ph2li71r331"]
 
 [ext_resource type="Texture2D" uid="uid://d1ggy6rlvlhj5" path="res://Sprites/BackGround/1.png" id="1_gapne"]
 [ext_resource type="Texture2D" uid="uid://bi1d8nrvkio6x" path="res://Sprites/BackGround/2.png" id="2_ynlkb"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d3xi7trobvkow" path="res://PreFabs/Ground.tscn" id="6_2q8k0"]
 [ext_resource type="PackedScene" uid="uid://coe4lxrbh8uk0" path="res://PreFabs/obj_spawner.tscn" id="7_jypeq"]
 [ext_resource type="PackedScene" uid="uid://dffayqo1kccit" path="res://PreFabs/Enemies/Columelo.tscn" id="8_uhdj6"]
+[ext_resource type="Script" path="res://Scripts/flyDevilSpawner.gd" id="11_uke05"]
 
 [node name="Main" type="Node2D"]
 
@@ -94,11 +95,18 @@ z_index = -2
 position = Vector2(748, -93)
 obj = ExtResource("4_tlgui")
 
-[node name="OBJSpawner6" parent="." instance=ExtResource("7_jypeq")]
+[node name="mobMushroom" parent="." instance=ExtResource("7_jypeq")]
 light_mask = 2
 visibility_layer = 2
 z_index = 1
 position = Vector2(823, 288)
+obj = ExtResource("8_uhdj6")
+
+[node name="mobMushroom2" parent="." instance=ExtResource("7_jypeq")]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+position = Vector2(824, 111)
 obj = ExtResource("8_uhdj6")
 
 [node name="Player" parent="." instance=ExtResource("4_54g45")]
@@ -109,10 +117,14 @@ position = Vector2(59, 135)
 z_index = 1
 position = Vector2(59, 311)
 
-[node name="OBJSpawner5" parent="." instance=ExtResource("7_jypeq")]
-position = Vector2(744, 65)
+[node name="mobFlyDevil" parent="." instance=ExtResource("7_jypeq")]
+position = Vector2(715, 66)
+script = ExtResource("11_uke05")
+time = 3.0
 
-[node name="OBJSpawner7" parent="." instance=ExtResource("7_jypeq")]
-position = Vector2(764, 209)
+[node name="mobFlyDevil2" parent="." instance=ExtResource("7_jypeq")]
+position = Vector2(663, 221)
+script = ExtResource("11_uke05")
+time = 3.0
 
 [connection signal="timeout" from="HUD/Timer" to="HUD/ScoreText" method="_on_timer_timeout"]
