@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckgannfuyc3op"]
+[gd_scene load_steps=5 format=3 uid="uid://ckgannfuyc3op"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_3hgbk"]
+[ext_resource type="Texture2D" uid="uid://dex358xvujxd0" path="res://Sprites/Menu/BackGround (1).jpg" id="2_ib306"]
+[ext_resource type="FontFile" uid="uid://b1nma2b6m5vqs" path="res://Fonts/antiquity-print.ttf" id="3_01y35"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j51x8"]
+line_spacing = 1.0
+font = ExtResource("3_01y35")
+font_size = 46
+font_color = Color(0.311833, 0.573089, 0.225493, 1)
+outline_size = 13
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 0.811765)
+shadow_offset = Vector2(10, 3)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -13,28 +26,67 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3hgbk")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_top = 106.0
+offset_right = 1776.0
+offset_bottom = 922.0
+texture = ExtResource("2_ib306")
+stretch_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 641.0
+offset_bottom = 268.0
+texture = ExtResource("2_ib306")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
 [node name="Play" type="Button" parent="."]
 layout_mode = 0
-offset_left = 34.0
-offset_top = 129.0
-offset_right = 127.0
-offset_bottom = 160.0
-text = "Play"
+offset_left = 32.0
+offset_top = 239.0
+offset_right = 146.0
+offset_bottom = 291.0
+mouse_default_cursor_shape = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_hover_color = Color(0.764706, 0.352941, 0.329412, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_01y35")
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+text = "Start"
 
-[node name="Exit" type="Button" parent="."]
+[node name="Quit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 33.0
-offset_top = 167.0
-offset_right = 126.0
-offset_bottom = 198.0
-text = "Exit"
+offset_left = 31.0
+offset_top = 297.0
+offset_right = 145.0
+offset_bottom = 349.0
+mouse_default_cursor_shape = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_hover_color = Color(0.764706, 0.352941, 0.329412, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_01y35")
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+text = "Quit
+"
+alignment = 0
 
-[node name="Title" type="Label" parent="."]
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 320.0
-offset_top = 55.0
-offset_right = 360.0
-offset_bottom = 78.0
+offset_top = 14.0
+offset_right = 641.0
+offset_bottom = 82.0
+text = "EndlessForest"
+label_settings = SubResource("LabelSettings_j51x8")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

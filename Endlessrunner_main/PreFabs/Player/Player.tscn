@@ -124,6 +124,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_me6t5")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": false,
 "name": &"Hit",
@@ -197,8 +200,10 @@ shape = SubResource("CapsuleShape2D_pvmpr")
 position = Vector2(1.5, -9.5)
 scale = Vector2(1.03125, 1.03125)
 sprite_frames = SubResource("SpriteFrames_mxpfb")
-animation = &"Run"
+animation = &"Hit"
 autoplay = "Run"
+frame = 7
+frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="." groups=["Player"]]
 

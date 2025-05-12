@@ -1,10 +1,10 @@
 [gd_scene load_steps=31 format=3 uid="uid://bi6ky8ikyk0nl"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_sptkl"]
-[ext_resource type="Texture2D" uid="uid://nvctonl6njb6" path="res://Sprites/_NEW/Players/Pink/Pink_Monster_Death_8.png" id="2_ymwcv"]
-[ext_resource type="Texture2D" uid="uid://3qvyaxam7a61" path="res://Sprites/_NEW/Players/Pink/Pink_Monster_Hurt_4.png" id="3_i0rcu"]
-[ext_resource type="Texture2D" uid="uid://ckcnegmif7ifi" path="res://Sprites/_NEW/Players/Pink/Pink_Monster_Jump_8.png" id="4_evpby"]
-[ext_resource type="Texture2D" uid="uid://dibh1njlusx3" path="res://Sprites/_NEW/Players/Pink/Pink_Monster_Run_6.png" id="5_g8s6o"]
+[ext_resource type="Texture2D" uid="uid://nvctonl6njb6" path="res://Sprites/Players/Pink/Pink_Monster_Death_8.png" id="2_ymwcv"]
+[ext_resource type="Texture2D" uid="uid://3qvyaxam7a61" path="res://Sprites/Players/Pink/Pink_Monster_Hurt_4.png" id="3_i0rcu"]
+[ext_resource type="Texture2D" uid="uid://ckcnegmif7ifi" path="res://Sprites/Players/Pink/Pink_Monster_Jump_8.png" id="4_evpby"]
+[ext_resource type="Texture2D" uid="uid://dibh1njlusx3" path="res://Sprites/Players/Pink/Pink_Monster_Run_6.png" id="5_g8s6o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pvmpr"]
 radius = 9.0
@@ -124,6 +124,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_iwsnc")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": false,
 "name": &"Hit",
@@ -199,7 +202,7 @@ shape = SubResource("CapsuleShape2D_pvmpr")
 position = Vector2(1.5, -9.5)
 scale = Vector2(1.03125, 1.03125)
 sprite_frames = SubResource("SpriteFrames_mxpfb")
-animation = &"Jump"
+animation = &"Hit"
 autoplay = "Run"
 
 [node name="Area2D" type="Area2D" parent="." groups=["Player"]]
