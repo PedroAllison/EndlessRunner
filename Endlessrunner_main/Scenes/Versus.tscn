@@ -107,7 +107,7 @@ obj = ExtResource("8_udbls")
 light_mask = 2
 visibility_layer = 2
 z_index = 1
-position = Vector2(824, 111)
+position = Vector2(908, 111)
 obj = ExtResource("8_udbls")
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("9_a4l7l")]
@@ -121,7 +121,7 @@ position = Vector2(59, 311)
 script = ExtResource("10_6hscs")
 
 [node name="mobFlyDevil" parent="." instance=ExtResource("6_70qfl")]
-position = Vector2(715, 66)
+position = Vector2(748, 54)
 script = ExtResource("11_5lpj1")
 time = 3.0
 

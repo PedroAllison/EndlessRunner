@@ -6,8 +6,12 @@ func _process(delta: float) -> void:
 	
 	text = str(dist)
 	
+	
+	
+	
+	
 	if dist >= 20:
-		Global.global_speed = 400
+		Global.global_speed = 4000
 	elif dist >= 10:
 		Global.global_speed = 350
 	

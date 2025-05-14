@@ -22,7 +22,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		new_ground.global_position = Vector2(600 , 0)
 		get_tree().current_scene.call_deferred("add_child", new_ground)
 		
-		await get_tree().create_timer(2).timeout
+		await get_tree().create_timer(5).timeout
 		queue_free()
 		
 		pass

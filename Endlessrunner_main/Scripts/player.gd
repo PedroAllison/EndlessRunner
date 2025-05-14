@@ -47,4 +47,5 @@ func die():
 	Engine.time_scale = 0.5
 	await get_tree().create_timer(0.8).timeout
 	Engine.time_scale = 1
+	Global.global_speed = 300
 	get_tree().reload_current_scene()
