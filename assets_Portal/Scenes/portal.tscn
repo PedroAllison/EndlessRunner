@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://mjaiaxmvxkf5"]
+
+[ext_resource type="Texture2D" uid="uid://cyqp0h6i533fh" path="res://Sprites/gere essa imagem.png" id="1_j20fm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oi2tk"]
+atlas = ExtResource("1_j20fm")
+region = Rect2(0, 0, 331, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dashy"]
+atlas = ExtResource("1_j20fm")
+region = Rect2(331, 0, 331, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwyjv"]
+atlas = ExtResource("1_j20fm")
+region = Rect2(662, 0, 331, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqy4h"]
+atlas = ExtResource("1_j20fm")
+region = Rect2(993, 0, 331, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8lpw3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oi2tk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dashy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwyjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqy4h")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Portal_PNG" type="AnimatedSprite2D" parent="."]
+position = Vector2(593, 312)
+sprite_frames = SubResource("SpriteFrames_8lpw3")
+animation = &"idle"
+frame_progress = 0.127492
