@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://32y3qn1mqqj"]
+
+[ext_resource type="Script" path="res://Scripts/portal_spawner.gd" id="1_7oh3c"]
+[ext_resource type="PackedScene" uid="uid://b03me81wqcyga" path="res://PreFabs/portal.tscn" id="2_a2nq7"]
+
+[node name="PortalSpawner" type="Node2D"]
+position = Vector2(800, 0)
+script = ExtResource("1_7oh3c")
+portal_scene = ExtResource("2_a2nq7")

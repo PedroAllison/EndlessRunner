@@ -1,0 +1,272 @@
+[gd_scene load_steps=29 format=3 uid="uid://b0ph2li71r331"]
+
+[ext_resource type="Texture2D" uid="uid://d1ggy6rlvlhj5" path="res://Sprites/BackGround/1.png" id="1_gapne"]
+[ext_resource type="Texture2D" uid="uid://bi1d8nrvkio6x" path="res://Sprites/BackGround/2.png" id="2_ynlkb"]
+[ext_resource type="FontFile" uid="uid://caj5mutj2qtlv" path="res://Fonts/SoccerLeague-Italic.ttf" id="3_3oxkk"]
+[ext_resource type="Script" path="res://Scripts/score_text.gd" id="3_13obc"]
+[ext_resource type="PackedScene" uid="uid://b6hv33mg5k13v" path="res://PreFabs/Player/Player.tscn" id="4_54g45"]
+[ext_resource type="PackedScene" uid="uid://cjbx7upjiqdgu" path="res://PreFabs/Cloud1.tscn" id="4_tlgui"]
+[ext_resource type="PackedScene" uid="uid://bi6ky8ikyk0nl" path="res://PreFabs/Player/Player_2.tscn" id="5_x1jl1"]
+[ext_resource type="PackedScene" uid="uid://d3xi7trobvkow" path="res://PreFabs/Ground.tscn" id="6_2q8k0"]
+[ext_resource type="PackedScene" uid="uid://coe4lxrbh8uk0" path="res://PreFabs/obj_spawner.tscn" id="7_jypeq"]
+[ext_resource type="PackedScene" uid="uid://dutajdt0cy6u6" path="res://PreFabs/coin.tscn" id="8_donc4"]
+[ext_resource type="PackedScene" uid="uid://dffayqo1kccit" path="res://PreFabs/Enemies/Columelo.tscn" id="8_uhdj6"]
+[ext_resource type="Script" path="res://Scripts/flyDevilSpawner.gd" id="11_uke05"]
+[ext_resource type="Texture2D" uid="uid://b0ej2bo6vx48t" path="res://Sprites/Itens/Coins.png" id="12_va5qm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2wbdq"]
+font = ExtResource("3_3oxkk")
+font_size = 30
+font_color = Color(1, 1, 0.996078, 1)
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dq045"]
+atlas = ExtResource("12_va5qm")
+region = Rect2(64, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvwcf"]
+atlas = ExtResource("12_va5qm")
+region = Rect2(80, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfrny"]
+atlas = ExtResource("12_va5qm")
+region = Rect2(96, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyrf"]
+atlas = ExtResource("12_va5qm")
+region = Rect2(112, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewr13"]
+atlas = ExtResource("12_va5qm")
+region = Rect2(128, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivclp"]
+atlas = ExtResource("12_va5qm")
+region = Rect2(144, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txbsj"]
+atlas = ExtResource("12_va5qm")
+region = Rect2(176, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60cif"]
+atlas = ExtResource("12_va5qm")
+region = Rect2(192, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xiw2i"]
+atlas = ExtResource("12_va5qm")
+region = Rect2(208, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtx2q"]
+atlas = ExtResource("12_va5qm")
+region = Rect2(224, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wm6i8"]
+atlas = ExtResource("12_va5qm")
+region = Rect2(240, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0c1rb"]
+atlas = ExtResource("12_va5qm")
+region = Rect2(256, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5utm0"]
+atlas = ExtResource("12_va5qm")
+region = Rect2(272, 17, 16, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vo1vq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dq045")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvwcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfrny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewr13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivclp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txbsj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60cif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xiw2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtx2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wm6i8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0c1rb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5utm0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 22.0
+}]
+
+[node name="Main" type="Node2D"]
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground2/ParallaxLayer"]
+offset_top = 58.0
+offset_right = 641.0
+offset_bottom = 326.0
+texture = ExtResource("1_gapne")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground2"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer2"]
+position = Vector2(1, 21)
+scale = Vector2(1.11111, 1.04321)
+texture = ExtResource("2_ynlkb")
+centered = false
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_top = -119.0
+offset_right = 641.0
+offset_bottom = 149.0
+texture = ExtResource("1_gapne")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(1, -164)
+scale = Vector2(1.11111, 1.04321)
+texture = ExtResource("2_ynlkb")
+centered = false
+
+[node name="timer" type="CanvasLayer" parent="."]
+
+[node name="ScoreText" type="Label" parent="timer"]
+texture_filter = 1
+offset_left = 1.0
+offset_right = 640.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0.998485, 0.943058, 0.972945, 1)
+theme_override_colors/font_shadow_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = -10
+theme_override_fonts/font = ExtResource("3_3oxkk")
+theme_override_font_sizes/font_size = 30
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_13obc")
+
+[node name="Timer" type="Timer" parent="timer"]
+autostart = true
+
+[node name="score" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="score"]
+offset_left = 47.0
+offset_top = 151.0
+offset_right = 95.0
+offset_bottom = 188.0
+text = "0"
+label_settings = SubResource("LabelSettings_2wbdq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="score"]
+position = Vector2(37, 167)
+scale = Vector2(1.6875, 1.6875)
+sprite_frames = SubResource("SpriteFrames_vo1vq")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Ground" parent="." instance=ExtResource("6_2q8k0")]
+metadata/_edit_lock_ = true
+
+[node name="Spawners" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="OBJSpawner" parent="Spawners" instance=ExtResource("7_jypeq")]
+z_index = -2
+position = Vector2(1118, 82)
+obj = ExtResource("4_tlgui")
+
+[node name="OBJSpawner2" parent="Spawners" instance=ExtResource("7_jypeq")]
+z_index = -2
+position = Vector2(748, -93)
+obj = ExtResource("4_tlgui")
+time = 2.0
+
+[node name="Coin2" parent="Spawners" instance=ExtResource("7_jypeq")]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+position = Vector2(764, 288)
+obj = ExtResource("8_donc4")
+
+[node name="Coin" parent="Spawners" instance=ExtResource("7_jypeq")]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+position = Vector2(759, 109)
+obj = ExtResource("8_donc4")
+
+[node name="Cr7" parent="Spawners" instance=ExtResource("7_jypeq")]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+position = Vector2(823, 288)
+obj = ExtResource("8_uhdj6")
+
+[node name="Cr72" parent="Spawners" instance=ExtResource("7_jypeq")]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+position = Vector2(908, 111)
+obj = ExtResource("8_uhdj6")
+
+[node name="Ball" parent="Spawners" instance=ExtResource("7_jypeq")]
+position = Vector2(663, 235)
+script = ExtResource("11_uke05")
+time = 3.0
+
+[node name="Ball1" parent="Spawners" instance=ExtResource("7_jypeq")]
+position = Vector2(748, 58)
+script = ExtResource("11_uke05")
+time = 3.0
+
+[node name="Player" parent="." groups=["players"] instance=ExtResource("4_54g45")]
+z_index = 1
+position = Vector2(59, 135)
+metadata/_edit_group_ = true
+
+[node name="Player2" parent="." groups=["players"] instance=ExtResource("5_x1jl1")]
+z_index = 1
+position = Vector2(59, 311)
+
+[connection signal="timeout" from="timer/Timer" to="timer/ScoreText" method="_on_timer_timeout"]

@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmls5ks5cmhgf"]
+
+[ext_resource type="Script" path="res://Scripts/game_over_survive.gd" id="1_kc0on"]
+[ext_resource type="FontFile" uid="uid://caj5mutj2qtlv" path="res://Fonts/SoccerLeague-Italic.ttf" id="2_qp6l3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pn34m"]
+font = ExtResource("2_qp6l3")
+font_size = 67
+font_color = Color(1, 0.141176, 0.184314, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kc0on")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="GameOver" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 51.0
+offset_right = 640.0
+offset_bottom = 74.0
+text = "Game Over"
+label_settings = SubResource("LabelSettings_pn34m")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TimeLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 139.0
+offset_right = 356.0
+offset_bottom = 162.0
+text = "Tempo
+"
+
+[node name="CoinsLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 138.0
+offset_right = 126.0
+offset_bottom = 161.0
+text = "Moedas"
+
+[node name="RetryButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 228.0
+offset_right = 380.0
+offset_bottom = 259.0
+text = "Reset Game"
+
+[node name="MenuButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 279.0
+offset_right = 378.0
+offset_bottom = 310.0
+text = "Back to Menu"
