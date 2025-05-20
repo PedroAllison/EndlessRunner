@@ -3,7 +3,6 @@ extends CharacterBody2D
 @export var jump_velocity = -300.0
 @export var jump = "Jump"
 
-signal died
 var gravity = 980
 var jumps = 1
 var is_alive = true

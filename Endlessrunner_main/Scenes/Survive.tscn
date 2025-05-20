@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://d1ggy6rlvlhj5" path="res://Sprites/BackGround/1.png" id="1_gapne"]
 [ext_resource type="Texture2D" uid="uid://bi1d8nrvkio6x" path="res://Sprites/BackGround/2.png" id="2_ynlkb"]
+[ext_resource type="FontFile" uid="uid://caj5mutj2qtlv" path="res://Fonts/SoccerLeague-Italic.ttf" id="3_3oxkk"]
 [ext_resource type="Script" path="res://Scripts/score_text.gd" id="3_13obc"]
-[ext_resource type="FontFile" uid="uid://b1nma2b6m5vqs" path="res://Fonts/antiquity-print.ttf" id="3_y6hck"]
 [ext_resource type="PackedScene" uid="uid://b6hv33mg5k13v" path="res://PreFabs/Player/Player.tscn" id="4_54g45"]
 [ext_resource type="PackedScene" uid="uid://cjbx7upjiqdgu" path="res://PreFabs/Cloud1.tscn" id="4_tlgui"]
 [ext_resource type="PackedScene" uid="uid://bi6ky8ikyk0nl" path="res://PreFabs/Player/Player_2.tscn" id="5_x1jl1"]
@@ -69,7 +69,7 @@ theme_override_constants/line_spacing = -1
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/outline_size = 6
 theme_override_constants/shadow_outline_size = -10
-theme_override_fonts/font = ExtResource("3_y6hck")
+theme_override_fonts/font = ExtResource("3_3oxkk")
 theme_override_font_sizes/font_size = 30
 text = "50"
 horizontal_alignment = 1
@@ -94,6 +94,7 @@ obj = ExtResource("4_tlgui")
 z_index = -2
 position = Vector2(748, -93)
 obj = ExtResource("4_tlgui")
+time = 2.0
 
 [node name="mobMushroom" parent="." instance=ExtResource("7_jypeq")]
 light_mask = 2
@@ -118,12 +119,12 @@ z_index = 1
 position = Vector2(59, 311)
 
 [node name="mobFlyDevil" parent="." instance=ExtResource("7_jypeq")]
-position = Vector2(748, 54)
+position = Vector2(748, 58)
 script = ExtResource("11_uke05")
 time = 3.0
 
 [node name="mobFlyDevil2" parent="." instance=ExtResource("7_jypeq")]
-position = Vector2(663, 221)
+position = Vector2(663, 235)
 script = ExtResource("11_uke05")
 time = 3.0
 

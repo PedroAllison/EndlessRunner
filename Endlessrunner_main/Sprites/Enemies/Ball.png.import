@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blfp6ox5m8gun"
-path="res://.godot/imported/Plan.png-7d10cb1d470df8423b8a6873e3bc77e0.ctex"
+uid="uid://dts233y1h5wvq"
+path="res://.godot/imported/Ball.png-d9b0ae5e26bd3c72b49017ac162774dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tileset/Plan.png"
-dest_files=["res://.godot/imported/Plan.png-7d10cb1d470df8423b8a6873e3bc77e0.ctex"]
+source_file="res://Sprites/Enemies/Ball.png"
+dest_files=["res://.godot/imported/Ball.png-d9b0ae5e26bd3c72b49017ac162774dc.ctex"]
 
 [params]
 

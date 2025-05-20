@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d1ggy6rlvlhj5" path="res://Sprites/BackGround/1.png" id="1_it3kd"]
 [ext_resource type="Texture2D" uid="uid://bi1d8nrvkio6x" path="res://Sprites/BackGround/2.png" id="2_ero85"]
-[ext_resource type="FontFile" uid="uid://b1nma2b6m5vqs" path="res://Fonts/antiquity-print.ttf" id="3_v16r7"]
+[ext_resource type="FontFile" uid="uid://caj5mutj2qtlv" path="res://Fonts/SoccerLeague-Italic.ttf" id="3_nesqc"]
 [ext_resource type="Script" path="res://Scripts/score_text.gd" id="4_og7xu"]
 [ext_resource type="PackedScene" uid="uid://d3xi7trobvkow" path="res://PreFabs/Ground.tscn" id="5_fe3d6"]
 [ext_resource type="PackedScene" uid="uid://coe4lxrbh8uk0" path="res://PreFabs/obj_spawner.tscn" id="6_70qfl"]
@@ -66,11 +66,11 @@ offset_bottom = 49.0
 theme_override_colors/font_color = Color(0.998485, 0.943058, 0.972945, 1)
 theme_override_colors/font_shadow_color = Color(0.205117, 0.205117, 0.205117, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/line_spacing = -1
+theme_override_constants/line_spacing = 4
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/outline_size = 6
 theme_override_constants/shadow_outline_size = -10
-theme_override_fonts/font = ExtResource("3_v16r7")
+theme_override_fonts/font = ExtResource("3_nesqc")
 theme_override_font_sizes/font_size = 30
 text = "50"
 horizontal_alignment = 1
@@ -95,6 +95,7 @@ obj = ExtResource("7_umytr")
 z_index = -2
 position = Vector2(748, -93)
 obj = ExtResource("7_umytr")
+time = 2.0
 
 [node name="mobMushroom" parent="." instance=ExtResource("6_70qfl")]
 light_mask = 2
@@ -121,12 +122,12 @@ position = Vector2(59, 311)
 script = ExtResource("10_6hscs")
 
 [node name="mobFlyDevil" parent="." instance=ExtResource("6_70qfl")]
-position = Vector2(748, 54)
+position = Vector2(748, 58)
 script = ExtResource("11_5lpj1")
 time = 3.0
 
 [node name="mobFlyDevil2" parent="." instance=ExtResource("6_70qfl")]
-position = Vector2(663, 231)
+position = Vector2(663, 235)
 script = ExtResource("11_5lpj1")
 time = 3.0
 

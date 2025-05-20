@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blfp6ox5m8gun"
-path="res://.godot/imported/Plan.png-7d10cb1d470df8423b8a6873e3bc77e0.ctex"
+uid="uid://do2ou7ajjddpv"
+path="res://.godot/imported/4.png-41687c5a192ade5d32fc7d574525ee9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tileset/Plan.png"
-dest_files=["res://.godot/imported/Plan.png-7d10cb1d470df8423b8a6873e3bc77e0.ctex"]
+source_file="res://Sprites/BackGround/Ingame/4.png"
+dest_files=["res://.godot/imported/4.png-41687c5a192ade5d32fc7d574525ee9a.ctex"]
 
 [params]
 

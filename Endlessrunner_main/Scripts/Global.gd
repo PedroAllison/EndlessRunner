@@ -1,4 +1,4 @@
 extends Node
 
 
-var global_speed = 300
+var global_speed = 200

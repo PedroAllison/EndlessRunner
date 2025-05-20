@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blfp6ox5m8gun"
-path="res://.godot/imported/Plan.png-7d10cb1d470df8423b8a6873e3bc77e0.ctex"
+uid="uid://dvibid0iy3kvf"
+path="res://.godot/imported/real.png-eab5bffddf43b9a0b8eabd521860e7f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tileset/Plan.png"
-dest_files=["res://.godot/imported/Plan.png-7d10cb1d470df8423b8a6873e3bc77e0.ctex"]
+source_file="res://Sprites/Times/real.png"
+dest_files=["res://.godot/imported/real.png-eab5bffddf43b9a0b8eabd521860e7f9.ctex"]
 
 [params]
 
