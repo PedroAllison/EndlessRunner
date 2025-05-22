@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d3xi7trobvkow" path="res://PreFabs/Ground.tscn" id="5_fe3d6"]
 [ext_resource type="PackedScene" uid="uid://coe4lxrbh8uk0" path="res://PreFabs/obj_spawner.tscn" id="6_70qfl"]
 [ext_resource type="PackedScene" uid="uid://cjbx7upjiqdgu" path="res://PreFabs/Cloud1.tscn" id="7_umytr"]
-[ext_resource type="PackedScene" uid="uid://dffayqo1kccit" path="res://PreFabs/Enemies/Columelo.tscn" id="8_udbls"]
+[ext_resource type="PackedScene" uid="uid://dffayqo1kccit" path="res://PreFabs/Enemies/Cr7.tscn" id="8_udbls"]
 [ext_resource type="PackedScene" uid="uid://b6hv33mg5k13v" path="res://PreFabs/Player/Player.tscn" id="9_a4l7l"]
 [ext_resource type="Script" path="res://Scripts/player2Versus.gd" id="10_6hscs"]
 [ext_resource type="PackedScene" uid="uid://bi6ky8ikyk0nl" path="res://PreFabs/Player/Player_2.tscn" id="10_kekev"]
@@ -94,12 +94,13 @@ metadata/_edit_lock_ = true
 z_index = -2
 position = Vector2(1118, 82)
 obj = ExtResource("7_umytr")
+time = 0.0
 
 [node name="OBJSpawner2" parent="Spawners" instance=ExtResource("6_70qfl")]
 z_index = -2
 position = Vector2(748, -93)
 obj = ExtResource("7_umytr")
-time = 2.0
+time = 0.0
 
 [node name="Cr7" parent="Spawners" instance=ExtResource("6_70qfl")]
 light_mask = 2
@@ -107,6 +108,7 @@ visibility_layer = 2
 z_index = 1
 position = Vector2(823, 288)
 obj = ExtResource("8_udbls")
+time = 2.0
 
 [node name="Cr8" parent="Spawners" instance=ExtResource("6_70qfl")]
 light_mask = 2
@@ -114,16 +116,17 @@ visibility_layer = 2
 z_index = 1
 position = Vector2(908, 111)
 obj = ExtResource("8_udbls")
+time = 2.0
 
 [node name="Ball" parent="Spawners" instance=ExtResource("6_70qfl")]
 position = Vector2(748, 58)
 script = ExtResource("11_5lpj1")
-time = 3.0
+time = 5.0
 
 [node name="Ball2" parent="Spawners" instance=ExtResource("6_70qfl")]
 position = Vector2(663, 235)
 script = ExtResource("11_5lpj1")
-time = 3.0
+time = 5.0
 
 [node name="PortalSpawner" parent="Spawners" instance=ExtResource("13_f3app")]
 

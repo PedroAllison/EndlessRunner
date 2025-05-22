@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d3xi7trobvkow" path="res://PreFabs/Ground.tscn" id="6_2q8k0"]
 [ext_resource type="PackedScene" uid="uid://coe4lxrbh8uk0" path="res://PreFabs/obj_spawner.tscn" id="7_jypeq"]
 [ext_resource type="PackedScene" uid="uid://dutajdt0cy6u6" path="res://PreFabs/coin.tscn" id="8_donc4"]
-[ext_resource type="PackedScene" uid="uid://dffayqo1kccit" path="res://PreFabs/Enemies/Columelo.tscn" id="8_uhdj6"]
+[ext_resource type="PackedScene" uid="uid://dffayqo1kccit" path="res://PreFabs/Enemies/Cr7.tscn" id="8_uhdj6"]
 [ext_resource type="Script" path="res://Scripts/flyDevilSpawner.gd" id="11_uke05"]
 [ext_resource type="Texture2D" uid="uid://b0ej2bo6vx48t" path="res://Sprites/Itens/Coins.png" id="12_va5qm"]
 
@@ -215,26 +215,29 @@ metadata/_edit_lock_ = true
 z_index = -2
 position = Vector2(1118, 82)
 obj = ExtResource("4_tlgui")
+time = 0.0
 
 [node name="OBJSpawner2" parent="Spawners" instance=ExtResource("7_jypeq")]
 z_index = -2
 position = Vector2(748, -93)
 obj = ExtResource("4_tlgui")
-time = 2.0
+time = 0.0
 
 [node name="Coin2" parent="Spawners" instance=ExtResource("7_jypeq")]
 light_mask = 2
 visibility_layer = 2
 z_index = 1
-position = Vector2(764, 288)
+position = Vector2(764, 297)
 obj = ExtResource("8_donc4")
+time = 2.0
 
 [node name="Coin" parent="Spawners" instance=ExtResource("7_jypeq")]
 light_mask = 2
 visibility_layer = 2
 z_index = 1
-position = Vector2(759, 109)
+position = Vector2(759, 121)
 obj = ExtResource("8_donc4")
+time = 2.0
 
 [node name="Cr7" parent="Spawners" instance=ExtResource("7_jypeq")]
 light_mask = 2
@@ -242,6 +245,7 @@ visibility_layer = 2
 z_index = 1
 position = Vector2(823, 288)
 obj = ExtResource("8_uhdj6")
+time = 2.0
 
 [node name="Cr72" parent="Spawners" instance=ExtResource("7_jypeq")]
 light_mask = 2
@@ -249,16 +253,17 @@ visibility_layer = 2
 z_index = 1
 position = Vector2(908, 111)
 obj = ExtResource("8_uhdj6")
+time = 2.0
 
 [node name="Ball" parent="Spawners" instance=ExtResource("7_jypeq")]
 position = Vector2(663, 235)
 script = ExtResource("11_uke05")
-time = 3.0
+time = 5.0
 
 [node name="Ball1" parent="Spawners" instance=ExtResource("7_jypeq")]
 position = Vector2(748, 58)
 script = ExtResource("11_uke05")
-time = 3.0
+time = 5.0
 
 [node name="Player" parent="." groups=["players"] instance=ExtResource("4_54g45")]
 z_index = 1

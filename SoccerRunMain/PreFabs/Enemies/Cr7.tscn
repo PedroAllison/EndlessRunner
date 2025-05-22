@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://dffayqo1kccit"]
+
+[ext_resource type="Script" path="res://Scripts/saw.gd" id="1_d6b26"]
+[ext_resource type="Texture2D" uid="uid://cv23g64xho0r" path="res://Sprites/Enemies/Cr7.png" id="2_yg3w8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gv7xb"]
+atlas = ExtResource("2_yg3w8")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14iv5"]
+atlas = ExtResource("2_yg3w8")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xypc"]
+atlas = ExtResource("2_yg3w8")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcp20"]
+atlas = ExtResource("2_yg3w8")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7hm4"]
+atlas = ExtResource("2_yg3w8")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r63ww"]
+atlas = ExtResource("2_yg3w8")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8rq8"]
+atlas = ExtResource("2_yg3w8")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a4yy2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gv7xb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14iv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xypc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcp20")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7hm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r63ww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8rq8")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 6.0
+}]
+
+[node name="Cr7" type="Area2D"]
+z_index = 1
+position = Vector2(31, -1)
+script = ExtResource("1_d6b26")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.9375, -5)
+scale = Vector2(0.904297, 1.15625)
+sprite_frames = SubResource("SpriteFrames_a4yy2")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.635812
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-3.92399, -4.11431)
+scale = Vector2(0.970445, 1.14363)
+polygon = PackedVector2Array(16.9886, 16.9886, 16.9886, 26.5446, 14.865, 27.6064, 12.7414, 28.6682, 7.4325, 28.6682, 5.30893, 27.6064, 4.24714, 28.6682, 2.12357, 28.6682, 0, 30.7918, -3.18536, 30.7918, -6.37071, 30.7918, -7.4325, 28.6682, -11.6796, 29.73, -14.865, 29.73, -16.9886, 29.73, -18.0504, 27.6064, -18.0504, 24.4211, -16.9886, 22.2975, -19.1121, 22.2975, -20.1739, 21.2357, -21.2357, 21.2357, -22.2975, 20.1739, -22.2975, 19.1121, -21.2357, 16.9886, -20.1739, 16.9886, -15.9268, 15.9268, -12.7414, 15.9268, -9.55607, 15.9268, -6.37071, 15.9268, -5.30893, 15.9268, -3.18536, 15.9268, 0, 16.9886, 2.12357, 16.9886, 3.18536, 15.9268, 5.30893, 15.9268, 8.49428, 15.9268, 12.7414, 15.9268, 15.9268, 15.9268)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

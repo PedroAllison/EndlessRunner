@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7eak5eip7q56"
-path="res://.godot/imported/Mushroom-Die.png-04767457e148b8fd33011dc153dcdfc0.ctex"
+uid="uid://cv23g64xho0r"
+path="res://.godot/imported/Cr7.png-7758966664c16fefd10bababbb34eda6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Enemies/Mushroom/Mushroom-Die.png"
-dest_files=["res://.godot/imported/Mushroom-Die.png-04767457e148b8fd33011dc153dcdfc0.ctex"]
+source_file="res://Sprites/Enemies/Cr7.png"
+dest_files=["res://.godot/imported/Cr7.png-7758966664c16fefd10bababbb34eda6.ctex"]
 
 [params]
 

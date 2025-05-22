@@ -18,20 +18,16 @@ func _on_body_entered(body):
 	while player_node and not player_node.is_in_group("players"):
 		player_node = player_node.get_parent()
 
-	if not player_node:
-		return 
-
-	if has_swapped:
+	if not player_node or has_swapped:
 		return
 
 	var p1 = players[0]
 	var p2 = players[1]
 
-	var x1 = p1.global_position.x
-	var x2 = p2.global_position.x
+	var y1 = p1.global_position.y
+	var y2 = p2.global_position.y
 
-	var temp_y = p1.global_position.y
-	p1.global_position = Vector2(x1, p2.global_position.y)
-	p2.global_position = Vector2(x2, temp_y)
+	p1.global_position.y = y2
+	p2.global_position.y = y1	
 
 	has_swapped = true
