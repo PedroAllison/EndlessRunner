@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://bfkrw4aqldtlx"]
+[gd_scene load_steps=64 format=3 uid="uid://bfkrw4aqldtlx"]
 
 [ext_resource type="Script" path="res://Scripts/choose_menu.gd" id="1_5g7e2"]
 [ext_resource type="Texture2D" uid="uid://dha1tbdwfb5w" path="res://Sprites/BackGround/CampoLine.png" id="2_nwad3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bdcv7skpftqn3" path="res://Sprites/Times/barca.png" id="3_nsmq1"]
 [ext_resource type="Texture2D" uid="uid://biet82efuqtk" path="res://Sprites/Players/Meçi/meçi run.png" id="4_onihh"]
 [ext_resource type="Texture2D" uid="uid://6dd8qnu0p75n" path="res://Sprites/Players/Meçi/meçi jump.png" id="5_4tgrm"]
+[ext_resource type="Texture2D" uid="uid://mh00dfpjmuku" path="res://Sprites/Gui/individual sprites/controller/controller button 1.png" id="5_dpt7p"]
 [ext_resource type="Texture2D" uid="uid://bg3525joqb6pu" path="res://Sprites/Players/Meçi/meçi death.png" id="6_lmox8"]
 [ext_resource type="Texture2D" uid="uid://m4r4rjjwetqg" path="res://Sprites/Players/LaminaHamal/LaminaHamal Run.png" id="7_qrs05"]
 [ext_resource type="Texture2D" uid="uid://blg4clh1bikij" path="res://Sprites/Players/LaminaHamal/LaminaHamal Jump.png" id="8_sgguw"]
@@ -33,6 +34,12 @@ font_size = 40
 font_color = Color(0.944762, 0.866721, 0, 1)
 outline_size = 10
 outline_color = Color(0.528381, 0.48263, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ehba"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e4piu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ss1s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5uumx"]
 atlas = ExtResource("4_onihh")
@@ -439,10 +446,11 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_hover_pressed_color = Color(0.529412, 0.482353, 0, 1)
 theme_override_colors/font_hover_color = Color(0.529412, 0.482353, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.529412, 0.482353, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.529412, 0.482353, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_77qmg")
 theme_override_font_sizes/font_size = 55
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4ehba")
 text = "Versus"
 flat = true
 
@@ -456,10 +464,11 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_hover_pressed_color = Color(0.529412, 0.482353, 0, 1)
 theme_override_colors/font_hover_color = Color(0.529412, 0.482353, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.529412, 0.482353, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.529412, 0.482353, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_77qmg")
 theme_override_font_sizes/font_size = 55
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e4piu")
 text = "Survive
 "
 flat = true
@@ -474,10 +483,11 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_hover_pressed_color = Color(0.760784, 0.356863, 0.337255, 1)
 theme_override_colors/font_hover_color = Color(0.760784, 0.356863, 0.337255, 1)
 theme_override_colors/font_pressed_color = Color(0.760784, 0.356863, 0.337255, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.760784, 0.356863, 0.337255, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_77qmg")
 theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2ss1s")
 text = "Back"
 flat = true
 
@@ -496,6 +506,11 @@ sprite_frames = SubResource("SpriteFrames_hiemd")
 animation = &"Idle"
 autoplay = "Idle"
 frame_progress = 0.0366707
+
+[node name="Selector" type="Sprite2D" parent="."]
+position = Vector2(460, 240)
+scale = Vector2(0.875, 0.875)
+texture = ExtResource("5_dpt7p")
 
 [connection signal="pressed" from="Menu/Versus" to="." method="_on_versus_pressed"]
 [connection signal="pressed" from="Menu/Survive" to="." method="_on_survive_pressed"]

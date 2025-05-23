@@ -1,10 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://ckgannfuyc3op"]
+[gd_scene load_steps=10 format=3 uid="uid://ckgannfuyc3op"]
 
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_3hgbk"]
 [ext_resource type="Texture2D" uid="uid://dk0fd1g1osga1" path="res://Sprites/BackGround/Campo.png" id="2_v8kj7"]
 [ext_resource type="Texture2D" uid="uid://dvibid0iy3kvf" path="res://Sprites/Times/real.png" id="4_ddwt4"]
 [ext_resource type="FontFile" uid="uid://caj5mutj2qtlv" path="res://Fonts/SoccerLeague-Italic.ttf" id="4_uxjb1"]
 [ext_resource type="Texture2D" uid="uid://bdcv7skpftqn3" path="res://Sprites/Times/barca.png" id="5_j3our"]
+[ext_resource type="Texture2D" uid="uid://mh00dfpjmuku" path="res://Sprites/Gui/individual sprites/controller/controller button 1.png" id="6_plann"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w4g70"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e8kmc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j51x8"]
 line_spacing = 1.0
@@ -54,8 +59,11 @@ theme_type_variation = &"FlatButton"
 theme_override_colors/font_hover_pressed_color = Color(0.298039, 0.462745, 0.909804, 1)
 theme_override_colors/font_hover_color = Color(0.298158, 0.463725, 0.910064, 1)
 theme_override_colors/font_pressed_color = Color(0.298039, 0.462745, 0.909804, 1)
+theme_override_colors/font_focus_color = Color(0.298039, 0.462745, 0.909804, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("4_uxjb1")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w4g70")
 toggle_mode = true
 text = "Start"
 
@@ -69,11 +77,31 @@ theme_type_variation = &"FlatButton"
 theme_override_colors/font_hover_pressed_color = Color(0.764706, 0.352941, 0.329412, 1)
 theme_override_colors/font_hover_color = Color(0.764706, 0.352941, 0.329412, 1)
 theme_override_colors/font_pressed_color = Color(0.764706, 0.352941, 0.329412, 1)
+theme_override_colors/font_focus_color = Color(0.764706, 0.352941, 0.329412, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("4_uxjb1")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e8kmc")
 toggle_mode = true
 text = "Quit
 "
+
+[node name="Instructions" type="Button" parent="."]
+offset_top = 301.0
+offset_right = 167.0
+offset_bottom = 360.0
+mouse_default_cursor_shape = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_hover_pressed_color = Color(0.298039, 0.462745, 0.909804, 1)
+theme_override_colors/font_hover_color = Color(0.298158, 0.463725, 0.910064, 1)
+theme_override_colors/font_pressed_color = Color(0.298039, 0.462745, 0.909804, 1)
+theme_override_colors/font_focus_color = Color(0.298039, 0.462745, 0.909804, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_uxjb1")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w4g70")
+toggle_mode = true
+text = "Controls"
 
 [node name="Real" type="TextureRect" parent="."]
 layout_mode = 0
@@ -104,5 +132,11 @@ label_settings = SubResource("LabelSettings_j51x8")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Selector" type="Sprite2D" parent="."]
+position = Vector2(190, 192)
+scale = Vector2(0.791667, 0.791667)
+texture = ExtResource("6_plann")
+
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Instructions" to="." method="_on_instructions_pressed"]
