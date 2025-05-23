@@ -1,10 +1,12 @@
 extends CharacterBody2D
 
+signal died
+
 @export var jump_velocity = -300.0
 @export var jump = "Jump"
 @export var max_lives = 3
 @export var invincibility_time = 5.0
-@export var player_id := "player1"
+@export var player_id = "player1"
 
 
 var lives = max_lives
@@ -20,6 +22,7 @@ func _ready():
 	add_to_group("players")
 	if is_alive:
 		GameManager.register_player(self)
+
 
 func _physics_process(delta):
 	if is_alive:
@@ -54,7 +57,6 @@ func die():
 		return
 
 	lives -= 1
-	print("Player perdeu uma vida, vidas restantes: ", lives)
 
 	if lives > 0:
 		invincible = true
@@ -66,14 +68,15 @@ func die():
 	$CollisionShape2D.queue_free()
 	$Area2D.queue_free()
 	velocity.y = jump_velocity
+
 	Engine.time_scale = 0.5
 	await get_tree().create_timer(0.8).timeout
 	Engine.time_scale = 1
+
 	emit_signal("died")
 
-	GameManager.player_died()
-
-
+	GameManager.player_died(player_id)  
+	
 func start_invincibility():
 
 	var blink_timer = Timer.new()

@@ -23,11 +23,11 @@ func _process(delta):
 
 func _unhandled_input(event):
 	if cooldown_timer <= 0:
-		if event.is_action_pressed("dpad_down"):
+		if event.is_action_pressed("ui_down"):
 			current_index = (current_index + 1) % buttons.size()
 			buttons[current_index].grab_focus()
 			cooldown_timer = input_cooldown
-		elif event.is_action_pressed("dpad_up"):
+		elif event.is_action_pressed("ui_up"):
 			current_index = (current_index - 1 + buttons.size()) % buttons.size()
 			buttons[current_index].grab_focus()
 			cooldown_timer = input_cooldown

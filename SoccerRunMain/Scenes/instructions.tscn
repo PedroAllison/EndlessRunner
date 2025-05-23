@@ -17,6 +17,13 @@
 [ext_resource type="Texture2D" uid="uid://dhthep11cfj46" path="res://Sprites/Gui/controller and mouse/flat keyboard light.png" id="15_nn5uw"]
 [ext_resource type="Texture2D" uid="uid://d3rcfyuocqqe1" path="res://Sprites/Gui/individual sprites/keyboard/Up Arrow.png" id="16_0aeku"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_ibjvx"]
+font = ExtResource("5_7nb78")
+font_size = 43
+font_color = Color(0.313726, 0.572549, 1, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_5uumx"]
 atlas = ExtResource("2_uvkyy")
 region = Rect2(0, 0, 32, 32)
@@ -179,9 +186,10 @@ animations = [{
 "speed": 11.0
 }]
 
-[sub_resource type="LabelSettings" id="LabelSettings_ibjvx"]
+[sub_resource type="LabelSettings" id="LabelSettings_bemma"]
 font = ExtResource("5_7nb78")
-font_color = Color(0.313726, 0.572549, 1, 1)
+font_size = 43
+font_color = Color(1, 0.290196, 0.513726, 1)
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
@@ -347,12 +355,6 @@ animations = [{
 "speed": 11.0
 }]
 
-[sub_resource type="LabelSettings" id="LabelSettings_bemma"]
-font = ExtResource("5_7nb78")
-font_color = Color(1, 0.290196, 0.513726, 1)
-outline_size = 3
-outline_color = Color(0, 0, 0, 1)
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ik0fg"]
 
 [node name="Control" type="Control"]
@@ -365,11 +367,20 @@ grow_vertical = 2
 script = ExtResource("1_tmk5i")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 641.0
 offset_bottom = 361.0
 texture = ExtResource("1_thjaq")
 expand_mode = 1
 metadata/_edit_lock_ = true
+
+[node name="NameLabel" type="Label" parent="TextureRect"]
+offset_left = 149.0
+offset_top = 23.0
+offset_right = 186.0
+offset_bottom = 67.0
+text = "P1"
+label_settings = SubResource("LabelSettings_ibjvx")
 
 [node name="Player1" type="AnimatedSprite2D" parent="TextureRect"]
 position = Vector2(161, 103)
@@ -378,13 +389,14 @@ sprite_frames = SubResource("SpriteFrames_gnagx")
 animation = &"Idle"
 autoplay = "Idle"
 
-[node name="NameLabel" type="Label" parent="TextureRect/Player1"]
-offset_left = -5.66667
-offset_top = -26.6667
-offset_right = 10.3333
-offset_bottom = -10.6667
-text = "P1"
-label_settings = SubResource("LabelSettings_ibjvx")
+[node name="NameLabel2" type="Label" parent="TextureRect"]
+offset_left = 462.0
+offset_top = 20.9999
+offset_right = 505.0
+offset_bottom = 64.9999
+text = "P2
+"
+label_settings = SubResource("LabelSettings_bemma")
 
 [node name="Player2" type="AnimatedSprite2D" parent="TextureRect"]
 position = Vector2(487, 103)
@@ -392,15 +404,6 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_bs3mo")
 animation = &"Idle"
 autoplay = "Idle"
-
-[node name="NameLabel" type="Label" parent="TextureRect/Player2"]
-offset_left = -10.3333
-offset_top = -26.6667
-offset_right = 8.66666
-offset_bottom = -10.6667
-text = "P2
-"
-label_settings = SubResource("LabelSettings_bemma")
 
 [node name="Menu" type="Control" parent="."]
 layout_mode = 3

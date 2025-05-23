@@ -8,7 +8,6 @@ func _ready():
 	if players.size() != 2:
 		push_error("Esperado exatamente 2 jogadores no grupo 'players'.")
 		return
-	
 
 func _physics_process(delta: float) -> void:
 	global_position += Vector2.LEFT * Global.global_speed * delta
@@ -21,6 +20,8 @@ func _on_body_entered(body):
 	if not player_node or has_swapped:
 		return
 
+	player_node.global_position.x = 59
+
 	var p1 = players[0]
 	var p2 = players[1]
 
@@ -28,6 +29,6 @@ func _on_body_entered(body):
 	var y2 = p2.global_position.y
 
 	p1.global_position.y = y2
-	p2.global_position.y = y1	
+	p2.global_position.y = y1
 
 	has_swapped = true

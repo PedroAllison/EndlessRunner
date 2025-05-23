@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b0ph2li71r331"]
+[gd_scene load_steps=15 format=3 uid="uid://b0ph2li71r331"]
 
 [ext_resource type="Texture2D" uid="uid://d1ggy6rlvlhj5" path="res://Sprites/BackGround/1.png" id="1_it3kd"]
 [ext_resource type="Texture2D" uid="uid://bi1d8nrvkio6x" path="res://Sprites/BackGround/2.png" id="2_ero85"]
@@ -12,7 +12,6 @@
 [ext_resource type="Script" path="res://Scripts/player2Versus.gd" id="10_6hscs"]
 [ext_resource type="PackedScene" uid="uid://bi6ky8ikyk0nl" path="res://PreFabs/Player/Player_2.tscn" id="10_kekev"]
 [ext_resource type="Script" path="res://Scripts/flyDevilSpawner.gd" id="11_5lpj1"]
-[ext_resource type="PackedScene" uid="uid://32y3qn1mqqj" path="res://PreFabs/portal_spawner.tscn" id="13_f3app"]
 [ext_resource type="Script" path="res://Scripts/hearts.gd" id="14_1lsor"]
 [ext_resource type="Texture2D" uid="uid://dciyybx8yk2dm" path="res://Sprites/Itens/Pixel Heart Sprite Sheet 32x32.png" id="15_523kd"]
 
@@ -127,8 +126,6 @@ time = 5.0
 position = Vector2(663, 235)
 script = ExtResource("11_5lpj1")
 time = 5.0
-
-[node name="PortalSpawner" parent="Spawners" instance=ExtResource("13_f3app")]
 
 [node name="Player" parent="." groups=["Player", "players"] instance=ExtResource("9_a4l7l")]
 z_index = 1

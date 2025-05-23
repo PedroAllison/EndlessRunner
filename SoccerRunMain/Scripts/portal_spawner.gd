@@ -1,12 +1,11 @@
 extends Node2D
 
 @export var portal_scene: PackedScene
-@export var spawn_x_position: float = 800  # posição X fora da tela
-@export var y_positions := [111, 288]  # posições possíveis no eixo Y
-@export var spawn_interval: float = 30.0  # tempo entre cada spawn
+@export var spawn_x_position: float = 800
+@export var y_positions := [111, 288]
+@export var spawn_interval: float = 10.0
 
 func _ready():
-	spawn_portal()
 	start_spawn_timer()
 
 func start_spawn_timer():

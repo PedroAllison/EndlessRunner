@@ -1,19 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmls5ks5cmhgf"]
+[gd_scene load_steps=9 format=3 uid="uid://v6t4irpu0wvu"]
 
-[ext_resource type="Script" path="res://Scripts/game_over_survive.gd" id="1_kc0on"]
-[ext_resource type="FontFile" uid="uid://caj5mutj2qtlv" path="res://Fonts/SoccerLeague-Italic.ttf" id="2_qp6l3"]
-[ext_resource type="Texture2D" uid="uid://mh00dfpjmuku" path="res://Sprites/Gui/individual sprites/controller/controller button 1.png" id="3_2yij4"]
+[ext_resource type="Script" path="res://Scripts/game_over_versus.gd" id="1_x185p"]
+[ext_resource type="FontFile" uid="uid://caj5mutj2qtlv" path="res://Fonts/SoccerLeague-Italic.ttf" id="2_ph5v4"]
+[ext_resource type="Texture2D" uid="uid://mh00dfpjmuku" path="res://Sprites/Gui/individual sprites/controller/controller button 1.png" id="3_sj4jf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pls5u"]
 bg_color = Color(0.0340698, 0.0290057, 0.020602, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_pn34m"]
-font = ExtResource("2_qp6l3")
+font = ExtResource("2_ph5v4")
 font_size = 67
 font_color = Color(1, 0.141176, 0.184314, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_gqai7"]
-font = ExtResource("2_qp6l3")
+font = ExtResource("2_ph5v4")
 font_size = 27
 font_color = Color(0.858432, 0.858094, 7.70092e-07, 1)
 
@@ -21,14 +21,14 @@ font_color = Color(0.858432, 0.858094, 7.70092e-07, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q6lv4"]
 
-[node name="GameOverSurvive" type="Control"]
+[node name="GameOverVersus" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_kc0on")
+script = ExtResource("1_x185p")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -47,12 +47,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="CoinsLabel" type="Label" parent="."]
+[node name="Winner" type="Label" parent="."]
 layout_mode = 0
-offset_top = 165.0
+offset_top = 155.0
 offset_right = 640.0
-offset_bottom = 188.0
-text = "Moedas"
+offset_bottom = 192.0
+text = "Vencedor: Player"
 label_settings = SubResource("LabelSettings_gqai7")
 horizontal_alignment = 1
 
@@ -67,7 +67,7 @@ theme_override_colors/font_hover_pressed_color = Color(0.298039, 0.462745, 0.909
 theme_override_colors/font_hover_color = Color(0.298039, 0.462745, 0.909804, 1)
 theme_override_colors/font_pressed_color = Color(0.298039, 0.462745, 0.909804, 1)
 theme_override_colors/font_focus_color = Color(0.298039, 0.462745, 0.909804, 1)
-theme_override_fonts/font = ExtResource("2_qp6l3")
+theme_override_fonts/font = ExtResource("2_ph5v4")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_iyt5y")
 toggle_mode = true
@@ -84,7 +84,7 @@ theme_override_colors/font_hover_pressed_color = Color(0.298039, 0.462745, 0.909
 theme_override_colors/font_hover_color = Color(0.298039, 0.462745, 0.909804, 1)
 theme_override_colors/font_pressed_color = Color(0.298039, 0.462745, 0.909804, 1)
 theme_override_colors/font_focus_color = Color(0.298039, 0.462745, 0.909804, 1)
-theme_override_fonts/font = ExtResource("2_qp6l3")
+theme_override_fonts/font = ExtResource("2_ph5v4")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_q6lv4")
 toggle_mode = true
@@ -94,7 +94,7 @@ flat = true
 [node name="Selector" type="Sprite2D" parent="."]
 position = Vector2(446, 244)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("3_2yij4")
+texture = ExtResource("3_sj4jf")
 
 [connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

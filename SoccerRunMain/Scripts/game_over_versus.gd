@@ -2,7 +2,7 @@ extends Control
 
 @onready var retry_button = $RetryButton
 @onready var menu_button = $MenuButton
-@onready var coins_label = $CoinsLabel
+@onready var winner_label = $Winner
 @onready var selector = $Selector
 
 var buttons = []
@@ -11,8 +11,11 @@ var input_cooldown = 0.2
 var cooldown_timer = 0.0
 
 func _ready():
-	coins_label.text = "Moedas: %d" % Global.final_score
-
+	if GameManager.winner_player != null:
+		winner_label.text = "%s venceu!" % GameManager.winner_player.capitalize()
+	else:
+		winner_label.text = "Empate!"
+		
 	buttons = [retry_button, menu_button]
 	for button in buttons:
 		button.connect("focus_entered", Callable(self, "_on_button_focus"))
@@ -56,7 +59,7 @@ func _on_button_pressed():
 		_on_menu_button_pressed()
 
 func _on_retry_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Survive.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Versus.tscn")
 
 func _on_menu_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/chooseMenu.tscn")

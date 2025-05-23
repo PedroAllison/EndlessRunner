@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmls5ks5cmhgf"]
+
+[ext_resource type="Script" path="res://Scripts/game_over_survive.gd" id="1_kc0on"]
+[ext_resource type="FontFile" uid="uid://caj5mutj2qtlv" path="res://Fonts/SoccerLeague-Italic.ttf" id="2_qp6l3"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vytib"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pn34m"]
+font = ExtResource("2_qp6l3")
+font_size = 67
+font_color = Color(1, 0.141176, 0.184314, 1)
+
+[node name="GameOverSurvive" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kc0on")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 646.0
+offset_bottom = 362.0
+texture = SubResource("GradientTexture1D_vytib")
+
+[node name="GameOver" type="Label" parent="."]
+layout_mode = 0
+offset_top = 51.0
+offset_right = 640.0
+offset_bottom = 119.0
+text = "Game Over"
+label_settings = SubResource("LabelSettings_pn34m")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CoinsLabel" type="Label" parent="."]
+layout_mode = 0
+offset_top = 165.0
+offset_right = 640.0
+offset_bottom = 188.0
+text = "Moedas"
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 228.0
+offset_right = 381.0
+offset_bottom = 259.0
+text = "Reset Game"
+
+[node name="MenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 278.0
+offset_right = 384.0
+offset_bottom = 309.0
+text = "Back to Menu"

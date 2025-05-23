@@ -12,14 +12,13 @@ func _physics_process(delta: float) -> void:
 	pass
 
 
-
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	
 	if not map_generated and area.is_in_group("Player"):
 		map_generated = true 
 		
 		var new_ground = next_ground.instantiate()
-		new_ground.global_position = Vector2(600 , 0)
+		new_ground.global_position = Vector2(640 , 0)
 		get_tree().current_scene.call_deferred("add_child", new_ground)
 		
 		await get_tree().create_timer(2).timeout

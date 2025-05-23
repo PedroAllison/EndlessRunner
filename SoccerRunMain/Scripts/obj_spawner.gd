@@ -4,10 +4,8 @@ extends Node2D
 @export var time = 1.0
 
 func _ready() -> void:
-	
-	$Timer.wait_time = time
-	
-	pass 
+	$Timer.wait_time = max(0.1, time)
+	$Timer.start()
 
 
 func _on_timer_timeout() -> void:

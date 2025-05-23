@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b0ph2li71r331"]
+[gd_scene load_steps=30 format=3 uid="uid://b0ph2li71r331"]
 
 [ext_resource type="Texture2D" uid="uid://d1ggy6rlvlhj5" path="res://Sprites/BackGround/1.png" id="1_gapne"]
 [ext_resource type="Texture2D" uid="uid://bi1d8nrvkio6x" path="res://Sprites/BackGround/2.png" id="2_ynlkb"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dffayqo1kccit" path="res://PreFabs/Enemies/Cr7.tscn" id="8_uhdj6"]
 [ext_resource type="Script" path="res://Scripts/flyDevilSpawner.gd" id="11_uke05"]
 [ext_resource type="Texture2D" uid="uid://b0ej2bo6vx48t" path="res://Sprites/Itens/Coins.png" id="12_va5qm"]
+[ext_resource type="PackedScene" uid="uid://bmls5ks5cmhgf" path="res://Scenes/Gameover/GameOverSurvive.tscn" id="14_gs0lu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2wbdq"]
 font = ExtResource("3_3oxkk")
@@ -188,7 +189,7 @@ autostart = true
 
 [node name="score" type="CanvasLayer" parent="."]
 
-[node name="CoinsLabel" type="Label" parent="score"]
+[node name="ScoreLabel" type="Label" parent="score"]
 offset_left = 47.0
 offset_top = 151.0
 offset_right = 95.0
@@ -273,5 +274,7 @@ metadata/_edit_group_ = true
 [node name="Player2" parent="." groups=["players"] instance=ExtResource("5_x1jl1")]
 z_index = 1
 position = Vector2(59, 311)
+
+[node name="GameOverSurvive" parent="." instance=ExtResource("14_gs0lu")]
 
 [connection signal="timeout" from="timer/Timer" to="timer/ScoreText" method="_on_timer_timeout"]
