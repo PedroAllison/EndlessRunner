@@ -87,6 +87,7 @@ text = "Quit
 "
 
 [node name="Instructions" type="Button" parent="."]
+layout_mode = 0
 offset_top = 301.0
 offset_right = 167.0
 offset_bottom = 360.0

@@ -1,7 +1,8 @@
-[gd_scene load_steps=32 format=3 uid="uid://b6hv33mg5k13v"]
+[gd_scene load_steps=35 format=3 uid="uid://b6hv33mg5k13v"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_67246"]
 [ext_resource type="Texture2D" uid="uid://bg3525joqb6pu" path="res://Sprites/Players/Meçi/meçi death.png" id="2_1uppk"]
+[ext_resource type="Shader" path="res://PreFabs/Player/Player.gdshader" id="2_6721r"]
 [ext_resource type="Texture2D" uid="uid://6dd8qnu0p75n" path="res://Sprites/Players/Meçi/meçi jump.png" id="3_c3o7m"]
 [ext_resource type="Texture2D" uid="uid://biet82efuqtk" path="res://Sprites/Players/Meçi/meçi run.png" id="4_l5iyy"]
 [ext_resource type="FontFile" uid="uid://caj5mutj2qtlv" path="res://Fonts/SoccerLeague-Italic.ttf" id="5_4go2o"]
@@ -9,6 +10,12 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pvmpr"]
 radius = 9.0
 height = 24.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jynba"]
+shader = ExtResource("2_6721r")
+shader_parameter/clr = Color(1, 1, 1, 1)
+shader_parameter/type = 1
+shader_parameter/thickness = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k0obu"]
 atlas = ExtResource("2_1uppk")
@@ -188,6 +195,12 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xtgow"]
 height = 26.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ww8dj"]
+shader = ExtResource("2_6721r")
+shader_parameter/clr = Color(1, 1, 1, 1)
+shader_parameter/type = 1
+shader_parameter/thickness = 1.0
+
 [sub_resource type="LabelSettings" id="LabelSettings_liefe"]
 font = ExtResource("5_4go2o")
 font_color = Color(0.313726, 0.572549, 1, 1)
@@ -201,6 +214,7 @@ position = Vector2(2, -5)
 shape = SubResource("CapsuleShape2D_pvmpr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_jynba")
 position = Vector2(1.5, -9.5)
 scale = Vector2(1.03125, 1.03125)
 sprite_frames = SubResource("SpriteFrames_mxpfb")
@@ -216,6 +230,7 @@ shape = SubResource("CapsuleShape2D_xtgow")
 debug_color = Color(0.697348, 0.299634, 0.970468, 0.42)
 
 [node name="NameLabel" type="Label" parent="."]
+material = SubResource("ShaderMaterial_ww8dj")
 offset_left = -4.0
 offset_top = -38.0
 offset_right = 12.0

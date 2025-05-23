@@ -1,7 +1,8 @@
-[gd_scene load_steps=32 format=3 uid="uid://bi6ky8ikyk0nl"]
+[gd_scene load_steps=35 format=3 uid="uid://bi6ky8ikyk0nl"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_sptkl"]
 [ext_resource type="Texture2D" uid="uid://blg4clh1bikij" path="res://Sprites/Players/LaminaHamal/LaminaHamal Jump.png" id="2_1d1tw"]
+[ext_resource type="Shader" path="res://PreFabs/Player/Player.gdshader" id="2_8pear"]
 [ext_resource type="Texture2D" uid="uid://djfixdohr2t3f" path="res://Sprites/Players/LaminaHamal/LaminaHamal death.png" id="2_b6d00"]
 [ext_resource type="Texture2D" uid="uid://m4r4rjjwetqg" path="res://Sprites/Players/LaminaHamal/LaminaHamal Run.png" id="2_h65bu"]
 [ext_resource type="FontFile" uid="uid://caj5mutj2qtlv" path="res://Fonts/SoccerLeague-Italic.ttf" id="5_7enwm"]
@@ -9,6 +10,12 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pvmpr"]
 radius = 9.0
 height = 24.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ovjdw"]
+shader = ExtResource("2_8pear")
+shader_parameter/clr = Color(1, 1, 1, 1)
+shader_parameter/type = 1
+shader_parameter/thickness = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e1ows"]
 atlas = ExtResource("2_b6d00")
@@ -188,6 +195,12 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xtgow"]
 height = 26.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_32eax"]
+shader = ExtResource("2_8pear")
+shader_parameter/clr = Color(1, 1, 1, 1)
+shader_parameter/type = 1
+shader_parameter/thickness = 1.0
+
 [sub_resource type="LabelSettings" id="LabelSettings_l6c0u"]
 font = ExtResource("5_7enwm")
 font_color = Color(1, 0.290196, 0.513726, 1)
@@ -203,6 +216,7 @@ position = Vector2(2, -5)
 shape = SubResource("CapsuleShape2D_pvmpr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_ovjdw")
 position = Vector2(1.5, -9.5)
 scale = Vector2(1.03125, 1.03125)
 sprite_frames = SubResource("SpriteFrames_mxpfb")
@@ -218,6 +232,7 @@ shape = SubResource("CapsuleShape2D_xtgow")
 debug_color = Color(0.697348, 0.299634, 0.970468, 0.42)
 
 [node name="NameLabel" type="Label" parent="."]
+material = SubResource("ShaderMaterial_32eax")
 offset_left = -9.0
 offset_top = -40.0
 offset_right = 10.0

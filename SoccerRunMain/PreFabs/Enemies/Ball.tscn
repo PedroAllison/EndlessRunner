@@ -1,7 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://2mc02k5voebp"]
+[gd_scene load_steps=12 format=3 uid="uid://2mc02k5voebp"]
 
 [ext_resource type="Script" path="res://Scripts/saw.gd" id="1_2fvp4"]
 [ext_resource type="Texture2D" uid="uid://dts233y1h5wvq" path="res://Sprites/Enemies/Ball.png" id="2_bqnve"]
+[ext_resource type="Shader" path="res://PreFabs/Player/Player.gdshader" id="2_gy4mr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ki4g2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4xcfy"]
+shader = ExtResource("2_gy4mr")
+shader_parameter/clr = Color(1, 1, 1, 1)
+shader_parameter/type = 1
+shader_parameter/thickness = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_70pa6"]
 atlas = ExtResource("2_bqnve")
@@ -44,11 +53,13 @@ radius = 13.0
 
 [node name="Ball" type="Area2D"]
 z_index = 1
+material = SubResource("ShaderMaterial_ki4g2")
 position = Vector2(49, -40)
 script = ExtResource("1_2fvp4")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_4xcfy")
 scale = Vector2(0.612676, 0.612676)
 sprite_frames = SubResource("SpriteFrames_tfbyl")
 animation = &"Idle"

@@ -1,10 +1,11 @@
-[gd_scene load_steps=66 format=3 uid="uid://bq8pqbw6bygo8"]
+[gd_scene load_steps=68 format=3 uid="uid://bq8pqbw6bygo8"]
 
 [ext_resource type="Texture2D" uid="uid://dha1tbdwfb5w" path="res://Sprites/BackGround/CampoLine.png" id="1_thjaq"]
 [ext_resource type="Script" path="res://Scripts/instructions.gd" id="1_tmk5i"]
 [ext_resource type="Texture2D" uid="uid://biet82efuqtk" path="res://Sprites/Players/Meçi/meçi run.png" id="2_uvkyy"]
 [ext_resource type="Texture2D" uid="uid://6dd8qnu0p75n" path="res://Sprites/Players/Meçi/meçi jump.png" id="3_pytqg"]
 [ext_resource type="Texture2D" uid="uid://bg3525joqb6pu" path="res://Sprites/Players/Meçi/meçi death.png" id="4_lfitl"]
+[ext_resource type="Shader" path="res://PreFabs/Player/Player.gdshader" id="4_tcya5"]
 [ext_resource type="FontFile" uid="uid://caj5mutj2qtlv" path="res://Fonts/SoccerLeague-Italic.ttf" id="5_7nb78"]
 [ext_resource type="Texture2D" uid="uid://m4r4rjjwetqg" path="res://Sprites/Players/LaminaHamal/LaminaHamal Run.png" id="6_mrim6"]
 [ext_resource type="Texture2D" uid="uid://blg4clh1bikij" path="res://Sprites/Players/LaminaHamal/LaminaHamal Jump.png" id="7_cifhu"]
@@ -23,6 +24,12 @@ font_size = 43
 font_color = Color(0.313726, 0.572549, 1, 1)
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2db5k"]
+shader = ExtResource("4_tcya5")
+shader_parameter/clr = Color(1, 1, 1, 1)
+shader_parameter/type = 1
+shader_parameter/thickness = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5uumx"]
 atlas = ExtResource("2_uvkyy")
@@ -375,6 +382,7 @@ expand_mode = 1
 metadata/_edit_lock_ = true
 
 [node name="NameLabel" type="Label" parent="TextureRect"]
+layout_mode = 0
 offset_left = 149.0
 offset_top = 23.0
 offset_right = 186.0
@@ -383,6 +391,7 @@ text = "P1"
 label_settings = SubResource("LabelSettings_ibjvx")
 
 [node name="Player1" type="AnimatedSprite2D" parent="TextureRect"]
+material = SubResource("ShaderMaterial_2db5k")
 position = Vector2(161, 103)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_gnagx")
@@ -390,6 +399,7 @@ animation = &"Idle"
 autoplay = "Idle"
 
 [node name="NameLabel2" type="Label" parent="TextureRect"]
+layout_mode = 0
 offset_left = 462.0
 offset_top = 20.9999
 offset_right = 505.0
@@ -399,6 +409,7 @@ text = "P2
 label_settings = SubResource("LabelSettings_bemma")
 
 [node name="Player2" type="AnimatedSprite2D" parent="TextureRect"]
+material = SubResource("ShaderMaterial_2db5k")
 position = Vector2(487, 103)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_bs3mo")

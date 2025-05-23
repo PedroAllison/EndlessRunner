@@ -1,7 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://dffayqo1kccit"]
+[gd_scene load_steps=13 format=3 uid="uid://dffayqo1kccit"]
 
 [ext_resource type="Script" path="res://Scripts/saw.gd" id="1_d6b26"]
+[ext_resource type="Shader" path="res://PreFabs/Player/Player.gdshader" id="2_gbklw"]
 [ext_resource type="Texture2D" uid="uid://cv23g64xho0r" path="res://Sprites/Enemies/Cr7.png" id="2_yg3w8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hax0m"]
+shader = ExtResource("2_gbklw")
+shader_parameter/clr = Color(1, 1, 1, 1)
+shader_parameter/type = 1
+shader_parameter/thickness = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gv7xb"]
 atlas = ExtResource("2_yg3w8")
@@ -67,6 +74,7 @@ script = ExtResource("1_d6b26")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_hax0m")
 position = Vector2(-3.9375, -5)
 scale = Vector2(0.904297, 1.15625)
 sprite_frames = SubResource("SpriteFrames_a4yy2")

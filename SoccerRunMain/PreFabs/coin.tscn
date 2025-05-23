@@ -1,7 +1,14 @@
-[gd_scene load_steps=18 format=3 uid="uid://dutajdt0cy6u6"]
+[gd_scene load_steps=20 format=3 uid="uid://dutajdt0cy6u6"]
 
 [ext_resource type="Script" path="res://Scripts/coin.gd" id="1_4l6w6"]
 [ext_resource type="Texture2D" uid="uid://b0ej2bo6vx48t" path="res://Sprites/Itens/Coins.png" id="2_lwi4q"]
+[ext_resource type="Shader" path="res://PreFabs/Player/Player.gdshader" id="2_xdg46"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gawpg"]
+shader = ExtResource("2_xdg46")
+shader_parameter/clr = Color(1, 1, 1, 1)
+shader_parameter/type = 1
+shader_parameter/thickness = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dq045"]
 atlas = ExtResource("2_lwi4q")
@@ -111,6 +118,7 @@ script = ExtResource("1_4l6w6")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_gawpg")
 sprite_frames = SubResource("SpriteFrames_w1rqx")
 animation = &"idle"
 autoplay = "idle"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://bfkrw4aqldtlx"]
+[gd_scene load_steps=66 format=3 uid="uid://bfkrw4aqldtlx"]
 
 [ext_resource type="Script" path="res://Scripts/choose_menu.gd" id="1_5g7e2"]
 [ext_resource type="Texture2D" uid="uid://dha1tbdwfb5w" path="res://Sprites/BackGround/CampoLine.png" id="2_nwad3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bdcv7skpftqn3" path="res://Sprites/Times/barca.png" id="3_nsmq1"]
 [ext_resource type="Texture2D" uid="uid://biet82efuqtk" path="res://Sprites/Players/Meçi/meçi run.png" id="4_onihh"]
 [ext_resource type="Texture2D" uid="uid://6dd8qnu0p75n" path="res://Sprites/Players/Meçi/meçi jump.png" id="5_4tgrm"]
+[ext_resource type="Shader" path="res://PreFabs/Player/Player.gdshader" id="5_6v42e"]
 [ext_resource type="Texture2D" uid="uid://mh00dfpjmuku" path="res://Sprites/Gui/individual sprites/controller/controller button 1.png" id="5_dpt7p"]
 [ext_resource type="Texture2D" uid="uid://bg3525joqb6pu" path="res://Sprites/Players/Meçi/meçi death.png" id="6_lmox8"]
 [ext_resource type="Texture2D" uid="uid://m4r4rjjwetqg" path="res://Sprites/Players/LaminaHamal/LaminaHamal Run.png" id="7_qrs05"]
@@ -40,6 +41,12 @@ outline_color = Color(0.528381, 0.48263, 0, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e4piu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2ss1s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ndf0p"]
+shader = ExtResource("5_6v42e")
+shader_parameter/clr = Color(1, 1, 1, 1)
+shader_parameter/type = 1
+shader_parameter/thickness = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5uumx"]
 atlas = ExtResource("4_onihh")
@@ -492,6 +499,7 @@ text = "Back"
 flat = true
 
 [node name="Player1" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_ndf0p")
 position = Vector2(159, 99)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_bndiy")
@@ -500,6 +508,7 @@ autoplay = "Idle"
 frame_progress = 0.48965
 
 [node name="Player2" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_ndf0p")
 position = Vector2(487, 99)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_hiemd")
